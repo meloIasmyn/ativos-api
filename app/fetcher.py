@@ -1,6 +1,6 @@
 import requests
 
-CSV_URL = "https://docs.google.com/spreadsheets/d/1nZgsrYbhA76tMme8ZCaJqb_Cmj0o1pNZeyTYqChJzjw/export?format=csv"
+CSV_URL = "https://docs.google.com/spreadsheets/d/1qvkXlgZ4g1aNu1i7aaNrNo1siwEQh_eQTK3z6T5zvAk/export?format=csv"
 
 def fetch_csv():
     resp = requests.get(CSV_URL, timeout=10)
