@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from app.service import get_ativos, atualizar_cache
 import threading
 import time
@@ -7,6 +8,14 @@ import os
 ENABLE_POLLING = os.getenv("ENABLE_POLLING", "true") == "true"
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # em produção pode restringir
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 def polling():
     while True:
